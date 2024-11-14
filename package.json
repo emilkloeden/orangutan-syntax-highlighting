@@ -3,6 +3,7 @@
   "displayName": "VS Code Orangutan Syntax Highlighting",
   "description": "Syntax Highlighting for the Orangutan language/runtime.",
   "version": "0.0.1",
+  "icon": "assets/icon.png",
   "engines": {
     "vscode": "^1.95.0"
   },
