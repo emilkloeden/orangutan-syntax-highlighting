@@ -1,0 +1,152 @@
+{
+  "name": "Orangutan",
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.orangutan",
+  "patterns": [
+    {
+      "include": "#control-keywords"
+    },
+    {
+      "include": "#declarations"
+    },
+    {
+      "include": "#module-keywords"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#builtin-function-calls"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    }
+  ],
+  "repository": {
+    "control-keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.conditional.orangutan",
+          "match": "\\b(if|else)\\b"
+        },
+        {
+          "name": "keyword.control.flow.orangutan",
+          "match": "\\b(return)\\b"
+        }
+      ]
+    },
+    "declarations": {
+      "patterns": [
+        {
+          "name": "storage.type.function.orangutan",
+          "match": "\\b(fn)\\b"
+        },
+        {
+          "name": "storage.type.orangutan",
+          "match": "\\b(let)\\b"
+        }
+      ]
+    },
+    "module-keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.import.orangutan",
+          "match": "\\b(use)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.orangutan",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "builtin-function-calls": {
+      "patterns": [
+        {
+          "comment": "General purpose built-in function calls",
+          "match": "\\b(puts|type|ffi)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.general.orangutan"
+            }
+          }
+        },
+        {
+          "comment": "Common collection operations",
+          "match": "\\b(len)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.collections.common.orangutan"
+            }
+          }
+        },
+        {
+          "comment": "Array operations with function parameters",
+          "match": "\\b(map|filter|reduce)\\s*\\((\\s*[\\w\\.]+\\s*,\\s*(?:fn\\s*\\([^)]*\\))?)?",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.array.orangutan"
+            },
+            "2": {
+              "patterns": [{ "include": "#declarations" }]
+            }
+          }
+        },
+        {
+          "comment": "Array modification operations",
+          "match": "\\b(join|append|prepend)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.array.orangutan"
+            }
+          }
+        },
+        {
+          "comment": "File I/O operations with path parameters",
+          "match": "\\b(readFile|writeFile)\\s*\\((\\s*\"[^\"]*\")?\\s*\\)",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.io.orangutan"
+            },
+            "2": {
+              "patterns": [{ "include": "#strings" }]
+            }
+          }
+        },
+        {
+          "comment": "HTTP operations with URL parameters",
+          "match": "\\b(get|post)\\s*\\((\\s*\"[^\"]*\")?\\s*\\)",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.http.orangutan"
+            },
+            "2": {
+              "patterns": [{ "include": "#strings" }]
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.orangutan",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.orangutan",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.line.number-sign.orangutan",
+      "match": "#.*$"
+    }
+  }
+}

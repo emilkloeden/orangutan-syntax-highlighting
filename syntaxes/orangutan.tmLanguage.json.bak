@@ -1,0 +1,82 @@
+{
+  "name": "Orangutan",
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.orangutan",
+  "patterns": [
+    {
+      "include": "#control-keywords"
+    },
+    {
+      "include": "#declarations"
+    },
+    {
+      "include": "#module-keywords"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#comments"
+    }
+  ],
+  "repository": {
+    "control-keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.conditional.orangutan",
+          "match": "\\b(if|else)\\b"
+        },
+        {
+          "name": "keyword.control.flow.orangutan",
+          "match": "\\b(return)\\b"
+        }
+      ]
+    },
+    "declarations": {
+      "patterns": [
+        {
+          "name": "storage.type.function.orangutan",
+          "match": "\\b(fn)\\b"
+        },
+        {
+          "name": "storage.type.orangutan",
+          "match": "\\b(let)\\b"
+        }
+      ]
+    },
+    "module-keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.import.orangutan",
+          "match": "\\b(use)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.boolean.orangutan",
+          "match": "\\b(true|false)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.orangutan",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.orangutan",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comments": {
+      "name": "comment.line.number-sign.orangutan",
+      "match": "#.*$"
+    }
+  }
+}
