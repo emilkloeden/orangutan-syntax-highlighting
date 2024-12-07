@@ -2,7 +2,7 @@
   "name": "orangutan-syntax-highlighting",
   "displayName": "VS Code Orangutan Syntax Highlighting",
   "description": "Syntax Highlighting for the Orangutan language/runtime.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "assets/icon.png",
   "repository": {
     "type": "git",
@@ -51,7 +51,8 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "build": "vsce package -o ./dist/orangutan-syntax-highlighting.vsix --skip-license"
   },
   "devDependencies": {
     "@types/vscode": "^1.95.0",

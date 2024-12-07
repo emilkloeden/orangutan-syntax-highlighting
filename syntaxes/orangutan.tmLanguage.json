@@ -87,6 +87,24 @@
           }
         },
         {
+          "comment": "Common string operations",
+          "match": "\\b(split)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.string.orangutan"
+            }
+          }
+        },
+        {
+          "comment": "Type conversion",
+          "match": "\\b(str|int)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.conversion"
+            }
+          }
+        },
+        {
           "comment": "Array operations with function parameters",
           "match": "\\b(map|filter|reduce)\\s*\\((\\s*[\\w\\.]+\\s*,\\s*(?:fn\\s*\\([^)]*\\))?)?",
           "captures": {
@@ -100,7 +118,7 @@
         },
         {
           "comment": "Array modification operations",
-          "match": "\\b(join|append|prepend)\\s*\\(",
+          "match": "\\b(join|append|prepend|first|last|rest|sort|zip|zipLongest)\\s*\\(",
           "captures": {
             "1": {
               "name": "support.function.builtin.array.orangutan"
