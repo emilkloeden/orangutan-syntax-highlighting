@@ -97,7 +97,7 @@
         },
         {
           "comment": "Type conversion",
-          "match": "\\b(str|int)\\s*\\(",
+          "match": "\\b(str|int|number)\\s*\\(",
           "captures": {
             "1": {
               "name": "support.function.builtin.conversion"
@@ -122,6 +122,15 @@
           "captures": {
             "1": {
               "name": "support.function.builtin.array.orangutan"
+            }
+          }
+        },
+        {
+          "comment": "Array modification operations",
+          "match": "\\b(keys|values|entries)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "support.function.builtin.hash.orangutan"
             }
           }
         },
