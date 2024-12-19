@@ -126,7 +126,7 @@
           }
         },
         {
-          "comment": "Array modification operations",
+          "comment": "Hash to array operations",
           "match": "\\b(keys|values|entries)\\s*\\(",
           "captures": {
             "1": {
@@ -161,19 +161,34 @@
       ]
     },
     "strings": {
-      "name": "string.quoted.double.orangutan",
-      "begin": "\"",
-      "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.orangutan",
-          "match": "\\\\."
+          "name": "string.quoted.double.orangutan",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.orangutan",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.orangutan",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.orangutan",
+              "match": "\\\\."
+            }
+          ]
         }
       ]
     },
     "comments": {
-      "name": "comment.line.number-sign.orangutan",
-      "match": "#.*$"
+      "name": "comment.line.double-slash.orangutan",
+      "match": "//.*$"
     }
   }
 }
