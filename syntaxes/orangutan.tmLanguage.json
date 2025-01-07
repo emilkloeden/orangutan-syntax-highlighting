@@ -70,7 +70,7 @@
       "patterns": [
         {
           "comment": "General purpose built-in function calls",
-          "match": "\\b(puts|type|ffi)\\s*\\(",
+          "match": "\\b(puts|type|ffi|prompt|args)\\s*\\(",
           "captures": {
             "1": {
               "name": "support.function.builtin.general.orangutan"

@@ -12,6 +12,17 @@ This extension provides basic syntax highlighting for orangutan.
 
 ## Release Notes
 
+### 0.0.5
+
+Added highlighting of:
+
+- `args()`
+- `prompt()`
+
+### 0.0.4
+
+Added highlighting of strings opened and closed with single quotes and fixed comments
+
 ### 0.0.3
 
 Added highlighting of:
