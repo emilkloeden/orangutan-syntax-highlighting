@@ -1,5 +1,7 @@
 # orangutan-sh
 
+![Orangutan Monkey Interpreter logo](./assets/logo.webp)
+
 This extension provides basic syntax highlighting for orangutan.
 
 ## Building
