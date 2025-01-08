@@ -1,4 +1,4 @@
-# orangutan-sh
+# Orangutan Syntax Highlighting
 
 ![Orangutan Syntax Highlighting logo](./assets/logo.webp)
 
